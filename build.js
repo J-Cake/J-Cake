@@ -10,7 +10,10 @@ import {config} from "./main.js";
 export const render = path =>
     fs.readFile(path.path, 'utf8')
         .then(res => new Promise(ok => {
-            const md = markdownIt()
+            const md = markdownIt({
+                typographer: true,
+                linkify: true
+            })
                 .use(markdownItFrontMatter, fm => setTimeout(() => ok({
                     fm: yaml.parse(fm, {}),
                     res: out

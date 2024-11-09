@@ -49,6 +49,8 @@ for await (const file of config.root.readdir())
         progress.push(buildPage(file)
             .then(res => fs.writeFile(dest.path, res)));
 
+        await fs.mkdir(dest.parent().path, { recursive: true });
+
         if (file.name().split(".").slice(-2)[0] === config.defaultLanguage)
             await fs.writeFile(file
                 .replaceBase(config.root, config.build)
