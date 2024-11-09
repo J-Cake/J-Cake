@@ -1,3 +1,8 @@
-# J-Cake
+---
+template: './template.html'
+title: 'Home'
+---
 
-Welcome to my website!
+# Home
+
+I like beans on toast

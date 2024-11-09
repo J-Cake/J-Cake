@@ -8,27 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@master
-      
-      - run: pip install -r requirements.txt
-          
-      - name: Setup pandoc
-        uses: nikeee/setup-pandoc@v1
-    
-      - name: Clear build directory
-        run: |
-          find build/* | xargs rm -rf;
-          
-      - name: Setup Build Directory
-        run: |
-          mkdir -p ./build/de ./build/en
+      - name: Install
+        run: npm install
 
       - name: Build
-        run: python3 build.py --language de
-        
-      - name: Redirect english files
-        run: |
-          ls build/en | xargs -I {} sh -c "./redirect.py /en/{} > ./build/{}"
+        run: npm run build
           
       - name: Bundle
         run: |

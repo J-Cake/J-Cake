@@ -1,9 +1,24 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<?py(include('./head.html'))?>
-	</head>
-	<body>
-		<?py(include('./frame.html'))?>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title>{fm.title}</title>
+
+    {util.includeStylesheet("./static/main.css")}
+</head>
+<body>
+    {util.langSwitch({
+        en: util.include("./include/header.en.html"),
+        de: util.include("./include/header.de.html"),
+    })}
+    <section id="root">
+        <article>
+            {body}
+        </article>
+    </section>
+    {util.langSwitch({
+        en: util.include("./include/footer.en.html"),
+        de: util.include("./include/footer.de.html"),
+    })}
+</body>
 </html>

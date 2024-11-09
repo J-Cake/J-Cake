@@ -1,3 +1,8 @@
-# J-Cake
+---
+template: './template.html'
+title: 'Start'
+---
 
-Wilkommen zu meiner Webseite
+# Start
+
+Test Inhalt

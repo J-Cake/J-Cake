@@ -1,0 +1,25 @@
+{
+    "name": "j-cake",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "main.js",
+    "scripts": {
+        "build": "node ."
+    },
+    "dependencies": {
+        "@types/node": "latest",
+        "@types/markdown-it": "latest",
+        "@j-cake/jcake-utils": "latest",
+        "yaml": "latest",
+        "chalk": "latest",
+        "esbuild": "latest",
+        "markdown-it": "latest",
+        "markdown-it-front-matter": "latest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/J-Cake/J-Cake.git"
+    },
+    "private": true
+}

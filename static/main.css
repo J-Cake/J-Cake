@@ -1,0 +1,53 @@
+@import url('./theme.css');
+@import url('./header.css');
+
+:root {
+    font-family: "Raleway", sans-serif;
+
+    --header-size: var(--element-medium);
+    --footer-size: auto;
+
+    --content-width: 980px;
+
+    display: grid;
+
+    grid-template-rows: 100vh;
+    grid-template-columns: 100vw;
+}
+
+body {
+    margin: 0;
+    padding: var(--layout-huge);
+
+    grid-area: 1 / 1;
+
+    display: grid;
+
+    grid-template-rows: var(--header-size) 1fr var(--footer-size);
+    grid-template-columns: 1fr minmax(auto, var(--content-width)) 1fr;
+
+    grid-template-areas:
+        "header  header  header"
+        "content content content"
+        "footer  footer  footer";
+
+    background: var(--background);
+}
+
+section#root {
+    grid-area: content;
+
+    display: grid;
+
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+
+    grid-template-areas:
+        "left article right";
+
+    color: var(--foreground);
+}
+
+section#root article {
+    grid-area: article;
+}
