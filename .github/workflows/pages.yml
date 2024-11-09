@@ -16,7 +16,10 @@ jobs:
       - name: Clear build directory
         run: |
           find build/* | xargs rm -rf;
-          
+
+      - name: Install
+        run: npm install
+
       - name: Build
         run: npm run build
           
