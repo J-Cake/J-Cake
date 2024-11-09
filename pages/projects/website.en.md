@@ -6,13 +6,13 @@ template: "./template.html"
 # All about this website
 
 For the most part, I'm anything but lazy. In fact I'm far too ambitious. I enjoy recreating things - sometimes to my own
-detriment. Last week I decided I don't like Jekyll, or Hugo or ... anything not already finished and ready-to-go. On I
-go to build by own hand-rolled static-site-generator that can work with GitHub Pages (since, you know, free for personal
-use etc). And well it works!
+detriment. Last week I decided I don't like Jekyll, or Hugo or ... anything already finished and ready-to-go. On I go to
+build by own hand-rolled static-site-generator that can work with GitHub Pages (since, you know, free for personal use
+etc). And well it works!
 
 To be fair to myself, it's not the first time dabbling with SSGs. For one, I've had the honour of building a website for
-a company I work at who had the very real desire to not require knowledge of HTML or even Markdown. With promises like "
-Yes, Microsoft Word will work just fine!" the task was quite substantial. Of course Wordpress, the engine we used at the
+a company I work at who had the very real desire to not require knowledge of HTML or even Markdown. With promises like 
+"Yes, Microsoft Word will work just fine!" the task was quite substantial. Of course Wordpress, the engine we used at the
 time doesn't have support for Office or anything ... no that would be far too simple.
 
 I had written up a Python script which using a template HTML file, converted Word files to HTML using Pandoc and
@@ -35,6 +35,6 @@ scripts which compile it, it's almost like magic. Needless to say, my future web
 
 That brings me to today. In about 10 hours, I had reimplemented these scripts using NodeJS and a lot of improvements
 including parallelisation and proper CSS bundling using ESBuild. It works in much the same way, except I don't need Word
-integration, so Markdown it is. 
+integration, so Markdown it is.
 
 This website now runs on push in GitHub actions. It's wonderful. Feel free to use it for your own Pages website. 
