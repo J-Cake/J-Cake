@@ -50,4 +50,7 @@ section#root {
 
 section#root article {
     grid-area: article;
+    text-align: justify;
+
+    font-family: "Rasa", serif;
 }
