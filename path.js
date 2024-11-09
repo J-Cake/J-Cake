@@ -28,7 +28,15 @@ export default class Path {
     }
 
     withExt(ext) {
-        return this.path.split('.').slice(0, -1).concat(ext).join('.');
+        return new Path(this.path.split('.').slice(0, -1).concat(ext).join('.'));
+    }
+
+    name() {
+        return this.path.split(path.sep).pop();
+    }
+
+    withName(name) {
+        return new Path(this.path.split(path.sep).slice(0, -1).concat(name).join(path.sep));
     }
 
     async *readdir(recursive = true) {
@@ -79,6 +87,9 @@ export default class Path {
     }
 
     replaceBase(base, newBase) {
+        if (!(newBase instanceof Path))
+            newBase = new Path(newBase);
+
         if (this.path.startsWith(base.path))
             return newBase.join(this.path.slice(base.path.length));
 
@@ -96,6 +107,6 @@ export default class Path {
 
     startsWith(base) {
         const chunks = this.path.split(path.sep);
-        return base.path.split(path.sep).every(i => chunks.shift() == i);
+        return base.path.split(path.sep).every(i => chunks.shift() === i);
     }
 }
