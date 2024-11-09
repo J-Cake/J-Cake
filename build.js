@@ -5,6 +5,7 @@ import yaml from 'yaml';
 
 import log from "./log.js";
 import * as util from "./util.js";
+import {config} from "./main.js";
 
 export const render = path =>
     fs.readFile(path.path, 'utf8')
@@ -54,4 +55,8 @@ export async function buildPage(path) {
     }
 
     return template;
+}
+
+export function redirect(to) {
+    return `<!DOCTYPE HTML><html><head><meta http-equiv="refresh" content="0; url=${encodeURI(to.replaceBase(config.build, '/').path.replaceAll('\\', '/'))}" /></head></html>`;
 }
